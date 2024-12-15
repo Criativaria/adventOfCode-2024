@@ -6,7 +6,7 @@ async function Day1Pt1() {
     // Your actual left and right lists contain many location IDs. What is the total distance between your lists?
 
     const fs = require("fs")
-    fs.readFile('../adventofcode-2024/src/day1/input.txt', 'utf8', function (err: any, data: any) {
+    fs.readFile('../adventofcode-2024/src/day1/input.txt', 'utf8', function (err: any, data: any) { // ler o txt
         if (err) { return console.log(err); }
 
         const inputTratment = data.replaceAll("\r\n", " ").replaceAll("   ", ",").replaceAll("  ", "").split(",") // tira todos os espaços e quebras de linhas, e transforma em virgula
@@ -66,23 +66,23 @@ async function Day1Pt2() {
         });
 
 
-        const score = list1.map((num1: number) => {
+        const score = list1.map((num1: number) => { //passando por cada item da primeira lista
 
             let times = 0
 
-            list2.forEach((num2: number) => {
+            list2.forEach((num2: number) => { //checando quantas vezes ele aparece na segunda lista
                 if (num1 === num2) {
                     return times++
                 }
             })
-            return num1 * times;
+            return num1 * times; //multiplicando
         })
 
         const result = score.reduce((total: number, num: number) => {
-            return total + num;
+            return total + num; //soma todos os resultados finais das multiplicações
         }, 0)
 
-        console.log(result);
+        console.log(result); //exibe o resultado
     })
 }
 
