@@ -1,4 +1,5 @@
-import { Day3Pt1, Day3Pt2 } from "./day3";
+import { Day2Pt2 } from "./day2";
 
 
-Day3Pt2();
+
+Day2Pt2();

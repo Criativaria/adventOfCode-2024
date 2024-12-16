@@ -125,12 +125,12 @@ export function Day2Pt2() {
     */
 
     const example = [
-        [7, 6, 4, 2, 1],
-        [1, 2, 7, 8, 9],
-        [9, 7, 6, 2, 1],
+        // [7, 6, 4, 2, 1],
+        // [1, 2, 7, 8, 9],
+        // [9, 7, 6, 2, 1],
         [1, 3, 2, 4, 5],
-        [8, 6, 4, 4, 1],
-        [1, 3, 6, 7, 9]
+        // [8, 6, 4, 4, 1],
+        // [1, 3, 6, 7, 9]
     ]
 
     const fs = require("fs")
@@ -155,15 +155,12 @@ export function Day2Pt2() {
         function oneByOne(data: number[][]) {
 
             data.map((report: number[]) => {
-
-
                 if (isSafe(report) == false) {
 
                     for (let i = 0; i < report.length; i++) {
 
-                        console.log(report, "-> false")
-
                         const inseraqeoretorno = report.filter((level: number, index: number) => index !== i);
+                        console.log(inseraqeoretorno, "-> false")
 
                         if (isSafe(inseraqeoretorno)) {
                             console.log(inseraqeoretorno + " -> true")
@@ -212,9 +209,9 @@ export function Day2Pt2() {
 
         function decreaseArray(report: number[]) {
             const original = [...report];
-            const decrease = report.sort((a, b) => b - a);
+            const decrease = original.sort((a, b) => b - a);
 
-            if (decrease.toString() === original.toString()) {
+            if (decrease.toString() === report.toString()) {
                 return true;
             } else {
                 return false;
@@ -222,9 +219,9 @@ export function Day2Pt2() {
         }
         function increaseArray(report: number[]) {
             const original = [...report];
-            const increase = report.sort((a, b) => a - b);
+            const increase = original.sort((a, b) => a - b);
 
-            if (increase.toString() === original.toString()) {
+            if (increase.toString() === report.toString()) {
                 return true;
             } else {
                 return false;
